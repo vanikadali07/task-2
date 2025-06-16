@@ -38,7 +38,7 @@ A stylish, interactive webpage where users can contact us and manage their favor
 🔗https://vanikadali07.github.io/task-2/
 
 📂 GitHub Repository:
-🔗 https://github.com/vanikadali07/task-2r
+🔗 https://github.com/vanikadali07/task-2
 
 I'm so grateful to ApexPlanet Software Pvt Ltd for this opportunity — to not just build with code, but design with intent, elegance, and purpose.
 
