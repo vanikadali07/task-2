@@ -1,0 +1,251 @@
+:root {
+  --color-primary: #7b3e57; /* Elegant wine */
+  --color-primary-light: #a86e84;
+  --color-bg-light: #fffaf6; /* Ivory */
+  --color-bg-dark: #2e2e2e; /* Charcoal */
+  --color-text-light: #2e2e2e;
+  --color-text-dark: #fffaf6;
+  --color-danger: #cc3333;
+  --color-danger-light: #e57373;
+
+  --font-heading: 'Times New Roman', serif;
+  --font-body: 'Poppins', sans-serif;
+
+  --transition-speed: 0.3s;
+}
+
+[data-theme='light'] {
+  --bg-color: var(--color-bg-light);
+  --text-color: var(--color-text-light);
+  --btn-bg: var(--color-primary);
+  --btn-hover-bg: var(--color-primary-light);
+  --input-bg: #ffffff;
+  --input-border: #ccc;
+  --shadow-color: rgba(123, 62, 87, 0.1);
+}
+
+[data-theme='dark'] {
+  --bg-color: var(--color-bg-dark);
+  --text-color: var(--color-text-dark);
+  --btn-bg: var(--color-primary-light);
+  --btn-hover-bg: var(--color-primary);
+  --input-bg: #3b3b3b;
+  --input-border: #666;
+  --shadow-color: rgba(168, 110, 132, 0.2);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: var(--btn-bg);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-heading);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+/* Toggle Button */
+#themeToggle {
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  cursor: pointer;
+  color: #fff;
+  transition: transform var(--transition-speed);
+}
+#themeToggle:hover {
+  transform: scale(1.15);
+}
+
+/* Section Styling */
+main {
+  flex-grow: 1;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+section {
+  background: var(--input-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px var(--shadow-color);
+  margin-bottom: 2rem;
+  transition: box-shadow var(--transition-speed);
+}
+section:hover {
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+/* Headings */
+h2 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--btn-bg);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Form */
+form {
+  max-width: 600px;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-family: var(--font-heading);
+}
+
+input[type='text'],
+input[type='email'] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--input-border);
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--btn-bg);
+  box-shadow: 0 0 8px var(--btn-bg);
+}
+
+.error-message {
+  color: var(--color-danger);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Buttons */
+button {
+  background: var(--btn-bg);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+  font-family: var(--font-body);
+}
+button:hover {
+  background-color: var(--btn-hover-bg);
+  transform: scale(1.05);
+}
+
+/* Product Form */
+#todoForm {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#todoInput {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Task List */
+#taskList {
+  margin-top: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+/* Task Item */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-color);
+  border: 1px solid var(--input-border);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px var(--shadow-color);
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+.task-item.completed .task-label {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.task-label {
+  flex: 1;
+  font-family: 'Playfair Display'; /* Elegant serif font */
+  font-size: 1.0rem;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+}
+
+
+.task-timestamp {
+  font-size: 0.85rem;
+  color: #888;
+  font-style: bold;
+  margin-left: 1rem;
+}
+
+.delete-btn {
+  background: var(--color-danger);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.delete-btn:hover {
+  background: var(--color-danger-light);
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  background: var(--btn-bg);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-family: var(--font-heading);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
